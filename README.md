@@ -1,4 +1,5 @@
-Step0.Installation of ColabFold:
+Step0. Installation of ColabFold:
+---------------------------------
 
 Install the local version of ColabFold, localcolabfold from (https://github.com/YoshitakaMo/localcolabfold) as follows:
 module load cuda/11.1.0
@@ -7,10 +8,12 @@ wget https://raw.githubusercontent.com/YoshitakaMo/localcolabfold/main/install_c
 bash install_colabbatch_linux.sh
 
 Step1. Fragment library generation.
+-----------------------------------
 
 Save the full length interacting protein sequence as full_length.dat and run Library_generation/sequence_generation.py script. We need to use an appropriate peptide length that we want to fragment into. In the given script we used 25 as the peptide length. This will generate output_sequences.txt file with all the fragment sequence and seqeunce ID.
 
 Step2. AF2 binding of all fragment.
+-----------------------------------
 
 Copy output_sequences.txt file file to a new directory. Run AF_binding/setup_first.sh that will setup directories for running AF calculations. Then execute AF_binding/submit_first.sh to submit all AF jobs. We need to use appropriate receptor sequence in AF_binding/setup_first.sh script and submit_AF2_ptm.sh script should be changed accordinly. 
 
@@ -19,6 +22,7 @@ Once all jobs are finished, run AF_binding/top_1.sh to copy all top1 model to a 
 distances_plddt_selected.txt will have the selected peptides for the next round.
 
 Step3. Random 5 competition.
+-----------------------------
 
 Create a new directory. 
 Copy distances_plddt_selected.txt to selected_seq.txt. 
@@ -39,6 +43,7 @@ For plotting the result, we can use Random_5/plot_random.py after executing Rand
 Executing Random_5/get_common.py file will generate selected_for_pw.dat file will have all the sequences that are selected for the final pairwise competition stage.
 
 Step4. All-by-all pairwise competition
+--------------------------------------
 
 Create  a new directory
 Copy selected_for_pw.dat with their associated sequences to the new directory as selected_seq.txt
