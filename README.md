@@ -16,11 +16,10 @@ Save the full length interacting protein sequence as ```full_length.dat``` and r
 Step2. AF2 binding of all fragment.
 -----------------------------------
 
-Copy output_sequences.txt file file to a new directory. Run AF_binding/setup_first.sh that will setup directories for running AF calculations. Then execute AF_binding/submit_first.sh to submit all AF jobs. We need to use appropriate receptor sequence in AF_binding/setup_first.sh script and submit_AF2_ptm.sh script should be changed accordinly. 
+Copy ```output_sequences.txt``` file file to a new directory. Run ```AF_binding/setup_first.sh``` that will setup directories for running AF calculations. Then execute ```AF_binding/submit_first.sh``` to submit all AF jobs. We need to use appropriate receptor sequence in ```AF_binding/setup_first.sh``` script and ```submit_AF2_ptm.sh``` script should be changed accordinly. 
 
-Once all jobs are finished, run AF_binding/top_1.sh to copy all top1 model to a directory and then run AF_binding/distance.py if we know the native, else AF_binding/distance_nonative.py if we do not know the native binder. (The later is jsut to highlight the native epitope in the plot)
-
-distances_plddt_selected.txt will have the selected peptides for the next round.
+Once all jobs are finished, run ```AF_binding/top_1.sh``` to copy all top1 model to a directory and then run ```AF_binding/distance.py``` if we know the native, else ```AF_binding/distance_nonative.py``` if we do not know the native binder. (The later is jsut to highlight the native epitope in the plot).<br>
+```distances_plddt_selected.txt``` will have the selected peptides for the next round.
 
 Step3. Random 5 competition.
 -----------------------------
