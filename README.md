@@ -11,7 +11,7 @@ bash install_colabbatch_linux.sh
 Step1. Fragment library generation.
 -----------------------------------
 
-Save the full length interacting protein sequence as full_length.dat and run Library_generation/sequence_generation.py script. We need to use an appropriate peptide length that we want to fragment into. In the given script we used 25 as the peptide length. This will generate output_sequences.txt file with all the fragment sequence and seqeunce ID.
+Save the full length interacting protein sequence as ```full_length.dat``` and run ```Library_generation/sequence_generation.py``` script. We need to use an appropriate peptide length that we want to fragment into. In the given script we used 25 as the peptide length. This will generate ```output_sequences.txt``` file with all the fragment sequence and seqeunce ID.
 
 Step2. AF2 binding of all fragment.
 -----------------------------------
