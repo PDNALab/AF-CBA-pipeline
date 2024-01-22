@@ -2,11 +2,12 @@ Step0. Installation of ColabFold:
 ---------------------------------
 
 Install the local version of ColabFold, localcolabfold from (https://github.com/YoshitakaMo/localcolabfold) as follows:
+``` bash
 module load cuda/11.1.0
 module load gcc/9.3.0
 wget https://raw.githubusercontent.com/YoshitakaMo/localcolabfold/main/install_colabbatch_linux.sh
 bash install_colabbatch_linux.sh
-
+```
 Step1. Fragment library generation.
 -----------------------------------
 
