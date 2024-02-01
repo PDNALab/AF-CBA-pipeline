@@ -72,8 +72,7 @@ Cite this article
 	elocation-id = {2024.01.20.576374},
 	year = {2024},
 	doi = {10.1101/2024.01.20.576374},
-  publisher = {Cold Spring Harbor Laboratory},
-  URL = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374},
-	eprint = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374.full.pdf},
-	journal = {bioRxiv}
+        publisher = {Cold Spring Harbor Laboratory},
+        URL = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374},
+        journal = {bioRxiv}
 }
