@@ -66,13 +66,16 @@ Once all jobs are done, execute ```Pairwise/count.py``` to score them and genera
 
 Cite this article
 -----------------
+
 @article {Mondal2024.01.20.576374,
 	author = {Arup Mondal and Bhumika Singh and Roland H. Felkner and Anna De Falco and GVT Swapna and Gaetano T. Montelione and Monica J. Roth and Alberto Perez},
 	title = {Sifting Through the Noise: A Computational Pipeline for Accurate Prioritization of Protein-Protein Binding Candidates in High-Throughput Protein Libraries},
 	elocation-id = {2024.01.20.576374},
 	year = {2024},
 	doi = {10.1101/2024.01.20.576374},
-        publisher = {Cold Spring Harbor Laboratory},
-        URL = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374},
-        journal = {bioRxiv}
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374},
+	eprint = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374.full.pdf},
+	journal = {bioRxiv}
 }
+
