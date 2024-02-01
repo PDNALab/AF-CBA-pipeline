@@ -58,8 +58,8 @@ All these steps can be executed by executing ```Pairwise/pairwise.sh```. (May ne
 
 Once all jobs are done, execute ```Pairwise/count.py``` to score them and generate count.dat with the score. Then execute ```Pairwise/plot.py``` to plot the results. Looking at the column, we can identify the best binder. The darker the red, the higher the outcompeting confidence. Ideally the for the best binder, we would have all red in the column and all blue in the row. 
 
-For more details read this article
------------------------------------
+For further information, refer to this article
+----------------------------------------------
 
 Sifting Through the Noise: A Computational Pipeline for Accurate Prioritization of Protein-Protein Binding Candidates in High-Throughput Protein Libraries
 Arup Mondal, Bhumika Singh, Roland H. Felkner, Anna De Falco, GVT Swapna, Gaetano T. Montelione, Monica J. Roth, Alberto Perez
