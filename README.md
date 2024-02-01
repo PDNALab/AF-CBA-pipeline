@@ -1,9 +1,3 @@
-Read
------
-
-Sifting Through the Noise: A Computational Pipeline for Accurate Prioritization of Protein-Protein Binding Candidates in High-Throughput Protein Libraries
-Arup Mondal, Bhumika Singh, Roland H. Felkner, Anna De Falco, GVT Swapna, Gaetano T. Montelione, Monica J. Roth, Alberto Perez
-bioRxiv 2024.01.20.576374; doi: https://doi.org/10.1101/2024.01.20.576374
 
 Step0. Installation of ColabFold:
 ---------------------------------
@@ -64,18 +58,10 @@ All these steps can be executed by executing ```Pairwise/pairwise.sh```. (May ne
 
 Once all jobs are done, execute ```Pairwise/count.py``` to score them and generate count.dat with the score. Then execute ```Pairwise/plot.py``` to plot the results. Looking at the column, we can identify the best binder. The darker the red, the higher the outcompeting confidence. Ideally the for the best binder, we would have all red in the column and all blue in the row. 
 
-Cite this article
------------------
+For more details read this article
+-----------------------------------
 
-@article {Mondal2024.01.20.576374,
-	author = {Arup Mondal and Bhumika Singh and Roland H. Felkner and Anna De Falco and GVT Swapna and Gaetano T. Montelione and Monica J. Roth and Alberto Perez},
-	title = {Sifting Through the Noise: A Computational Pipeline for Accurate Prioritization of Protein-Protein Binding Candidates in High-Throughput Protein Libraries},
-	elocation-id = {2024.01.20.576374},
-	year = {2024},
-	doi = {10.1101/2024.01.20.576374},
-	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374},
-	eprint = {https://www.biorxiv.org/content/early/2024/01/23/2024.01.20.576374.full.pdf},
-	journal = {bioRxiv}
-}
+Sifting Through the Noise: A Computational Pipeline for Accurate Prioritization of Protein-Protein Binding Candidates in High-Throughput Protein Libraries
+Arup Mondal, Bhumika Singh, Roland H. Felkner, Anna De Falco, GVT Swapna, Gaetano T. Montelione, Monica J. Roth, Alberto Perez
+bioRxiv 2024.01.20.576374; doi: https://doi.org/10.1101/2024.01.20.576374
 
