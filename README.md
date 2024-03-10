@@ -1,4 +1,7 @@
 
+![Main_fig2](https://github.com/PDNALab/AF-CBA-pipeline/assets/50182847/823b9ed7-3d0c-4a02-aae5-20a6cc2d4038)
+
+
 Step0. Installation of ColabFold:
 ---------------------------------
 
