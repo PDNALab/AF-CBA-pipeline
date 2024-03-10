@@ -3,6 +3,6 @@ awk 'NR==FNR { data[$1] = $2; next } $1 in data { $2 = data[$1] } 1' selected_se
 cd pairwise
 shuf  selected_seq.txt | awk '{print $1}' | xargs mkdir
 cp selected_seq.txt random_sequences.txt
-cp ../../../pairwise/* .
+cp ../../../upload/Pairwise/* .
 bash random_setup.sh 
 for i in Seq*; do cd $i;  bash setup.sh ;  cd ..;  done

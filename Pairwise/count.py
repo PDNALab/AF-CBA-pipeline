@@ -12,19 +12,32 @@ for i in range(len(whole)):
 pep1=whole[:colon[0]]
 prot=whole[colon[0]+1:colon[1]]
 pep2=whole[colon[1]+1:]
-binding_res=[len(pep1)+41,len(pep1)+42,len(pep1)+43]
+key_res=[41,42,43]
 
-pep1_pair=[]
-for i in range(len(pep1)):
-    for j in binding_res:    
-         pep1_pair.append([j,i])
 
-#print(pep1_pair)
+def ref(keys,pep1,complx):
+    min_dist=[]
+    for key in keys:
+        pep_pair=[]
+        for i in range(len(pep1)):
+            for j in [len(pep1)+key]:
+                pep_pair.append([j,i])
+        a=md.load(complx)
+        dist = md.compute_contacts(a, pep_pair, scheme='CA')[0]
+        min_dist.append(dist.min())
+    return np.mean(min_dist)
 
-pep2_pair=[]
-for i in range(len(prot)+len(pep1),len(whole)-2):
-    for j in binding_res: 
-        pep2_pair.append([j,i])
+def comp(keys,pep1, complx):
+    min_dist=[]
+    for key in keys:
+        pep_pair=[]
+        for i in range(len(prot)+len(pep1),len(whole)-2):
+            for j in [len(pep1)+key]:
+                pep_pair.append([j,i])
+        a=md.load(complx)
+        dist = md.compute_contacts(a, pep_pair, scheme='CA')[0]
+        min_dist.append(dist.min())
+    return np.mean(min_dist)
 
 
 f=open('count.dat','w')
@@ -37,16 +50,11 @@ for i in sorted_pep:
         all_pdb = glob.glob(i+j+'complex*/*.pdb')
         pep1_dist=[]
         pep2_dist=[]
-        #print(all_pdb)
         for k in all_pdb:
-            a=md.load(k)
-            dist = md.compute_contacts(a, pep1_pair, scheme='CA')[0]
-            pep1_dist.append(np.mean(dist))
-        for k in all_pdb:
-            a=md.load(k)
-            dist = md.compute_contacts(a, pep2_pair, scheme='CA')[0]
-            pep2_dist.append(np.mean(dist))
-        #print(pep1_dist,pep2_dist)
+            dist1=ref(key_res,pep1,k)
+            dist2=comp(key_res,pep2,k)
+            pep1_dist.append(dist1)
+            pep2_dist.append(dist2)
         count=0
         for p1,p2 in zip(pep1_dist, pep2_dist):
             if p1 > p2:

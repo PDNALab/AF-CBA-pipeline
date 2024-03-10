@@ -3,11 +3,17 @@ from matplotlib import pyplot as plt
 import matplotlib as mpl
 import glob
 
+def increment_numerical_part(element):
+    numerical_part = element[:]
+    incremented_numerical_part = str(int(numerical_part) + 0)
+    result = incremented_numerical_part
+    return result
+
 all_pep=sorted(glob.glob('Seq*/'))
 print(all_pep)
-modified_list = [s[:-1] for s in all_pep]
+modified_list = [s[3:-1] for s in all_pep]
 print(modified_list)
-sorted_pep = sorted(modified_list, key=lambda x: int(x[3:]))
+sorted_pep = sorted(modified_list, key=lambda x: int(x))
 print(sorted_pep)
 f=open('count.dat').readlines()
 clean=[]
@@ -34,7 +40,9 @@ plt.imshow(aa, cmap="coolwarm", interpolation="nearest", origin="upper",alpha=0.
 
 
 x_ticks = np.arange(1, aa.shape[1]+1, 1)
-x_label=sorted_pep
+x_labels=sorted_pep
+x_label=[increment_numerical_part(element) for element in x_labels]
+
 plt.yticks(x_ticks-1, x_label)
 plt.xticks(x_ticks-1, x_label,rotation=90)
 
@@ -48,6 +56,14 @@ for i in range(rows):
     for j in range(cols):
         plt.gca().add_patch(plt.Rectangle((j - 0.5, i - 0.5), 1, 1, fill=False, edgecolor='white',alpha=1.0))
 colorbar=plt.colorbar(shrink=0.82, norm = mpl.colors.Normalize(vmin=-1, vmax=1))
-colorbar.ax.tick_params(labelsize=11) 
-plt.savefig('top.pdf')
-#plt.show()
+custom_ticks=[-1.00,0,1.00]
+custom_labels=['100% Winning','No Preference','100% Losing']
+colorbar.set_ticks(custom_ticks)
+#colorbar.set_ticklabels(custom_labels)
+#colorbar.ax.set_yticklabels(custom_labels, rotation=90) 
+
+colorbar.ax.tick_params(labelsize=12)
+
+ 
+plt.savefig('top_mod.pdf')
+plt.show()
