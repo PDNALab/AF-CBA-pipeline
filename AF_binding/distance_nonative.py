@@ -4,6 +4,21 @@ import prody
 from matplotlib import pyplot as plt
 import glob
 
+def longest_consecutive_greater(numbers, threshold):
+    max_consecutive = []
+    current_consecutive = []
+
+    for num in numbers:
+        if num > threshold:
+            current_consecutive.append(num)
+            if len(current_consecutive) > len(max_consecutive):
+                max_consecutive = current_consecutive.copy()
+        else:
+            current_consecutive = []
+
+    return max_consecutive
+
+
 total_frag=glob.glob('Seq*.pdb')
 
 # Define the key residues and their corresponding atom names
@@ -21,9 +36,9 @@ distance_list=[]
 f=open('distances_plddt.txt', "w")
 f1=open('distances_plddt_selected.txt', "w")
 # Loop through PDB files from Seq1.pdb to Seq1901.pdb
-for seq_num in range(1, len(total_frag)+1):  # Adjust the range as needed
-    pdb_file = f"Seq{seq_num}.pdb"
-    
+#for seq_num in range(1, len(total_frag)+1):  # Adjust the range as needed
+#    pdb_file = f"Seq{seq_num}.pdb"
+for pdb_file in total_frag:   
     try:
         # Initialize a list to store distances for each PDB file
         distances = []
@@ -60,7 +75,12 @@ for seq_num in range(1, len(total_frag)+1):  # Adjust the range as needed
         
         # Calculate pLDDT
         peptide_ca=prody.parsePDB(pdb_file,chain='A',subset='CA')
-        pep_plddt=np.mean(peptide_ca.getBetas()) 
+        result=longest_consecutive_greater(peptide_ca.getBetas(), 70.0)
+        print(result)
+        if len(result)>=6:
+            pep_plddt=np.mean(result)
+        else:
+            pep_plddt=np.mean(peptide_ca.getBetas()) 
         plddt_list.append(pep_plddt)
         distance_list.append(average_distance)
         # Append the result to the output file

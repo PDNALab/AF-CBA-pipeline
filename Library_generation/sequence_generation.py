@@ -8,8 +8,9 @@ sequence_length = 25             #replace this number with appropriate peptide l
 # Initialize an empty list to store the sequences
 sequences = []
 
-# Extract sequences of the specified length
-for i in range(len(full_protein_sequence) - sequence_length + 1):
+# Extract sequences of the specified lengt
+for i in range(len(full_protein_sequence) - sequence_length + 1):  # for 1 sliding window residue fragments
+#for i in [j for j in range(0,len(full_protein_sequence) - sequence_length + 1,13)]+[len(full_protein_sequence) - sequence_length]:  # for 13 residue sliding window fragments
     sequence = full_protein_sequence[i:i + sequence_length]
     sequences.append(sequence)
 
