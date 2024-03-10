@@ -1,7 +1,6 @@
 
 ![Main_fig2](https://github.com/PDNALab/AF-CBA-pipeline/assets/50182847/823b9ed7-3d0c-4a02-aae5-20a6cc2d4038)
 
-
 Step0. Installation of ColabFold:
 ---------------------------------
 
@@ -49,7 +48,7 @@ Executing ```Random_5/get_common.py``` file will generate *selected_for_pw.dat* 
 Step4. All-by-all pairwise competition
 --------------------------------------
 
-Create  a new directory. <br>
+Create a new directory. <br>
 Copy *selected_for_pw.dat* with their associated sequences to the new directory as *selected_seq.txt*. <br>
 Create directories for all selected peptides. <br>
 Copy *selected_seq.txt* to *random_sequences.txt*. <br>
@@ -60,6 +59,17 @@ Execute ```setup.sh``` in each of the directories corresponding to each of the s
 All these steps can be executed by executing ```Pairwise/pairwise.sh```. (May need some changes depending on directory organization)
 
 Once all jobs are done, execute ```Pairwise/count.py``` to score them and generate count.dat with the score. Then execute ```Pairwise/plot.py``` to plot the results. Looking at the column, we can identify the best binder. The darker the red, the higher the outcompeting confidence. Ideally the for the best binder, we would have all red in the column and all blue in the row. 
+
+Example: BRD3:MLVIN; Finding BRD3 binding epitope from full-length MLV-IN
+-------------------------------------------------------------------------
+
+We have uploaded BRD3-MLVIN/ as an example for a Proof of Concept test case. Due to the storage limit, the AF-predicted structures are excluded. However, a complete AF-CBA calculation along with the structures can be freely downloaded from Zenodo. Please visit https://doi.org/10.5281/zenodo.10801197.
+
+AF-CBA predicted top models:
+---------------------------
+
+Predicted_Top_Models/ folder has predicted top models for each tested system except where AF-CBA failed due to co-binding or initial structure prediction. These systems are categorized as ET binding systems with known peptide length (Poc1), non-ET systems with known peptide length (Poc2), ET binding systems with peptide length of 25 residues (Poc1_25aa), and finally, top 20 hits from pull-down experiments (PullDown_Prediction).
+
 
 For further information, refer to this article
 ----------------------------------------------
