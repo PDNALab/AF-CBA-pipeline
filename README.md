@@ -68,7 +68,7 @@ We have uploaded BRD3-MLVIN/ as an example for a Proof of Concept test case. Due
 AF-CBA predicted top models:
 ---------------------------
 
-Predicted_Top_Models/ folder has predicted top models for each tested system except where AF-CBA failed due to co-binding or initial structure prediction. These systems are categorized as ET binding systems with known peptide length (Poc1), non-ET systems with known peptide length (Poc2), ET binding systems with peptide length of 25 residues (Poc1_25aa), and finally, top 20 hits from pull-down experiments (PullDown_Prediction).
+Predicted_Top_Models/ folder has predicted top models for each tested system except where AF-CBA failed due to co-binding or initial structure prediction. These systems are categorized as ET binding systems with known peptide length (PoC1), non-ET systems with known peptide length (PoC2), ET binding systems with peptide length of 25 residues (PoC1_25aa), and finally, top 20 hits from pull-down experiments (PullDown_Prediction).
 
 
 For further information, refer to this article
